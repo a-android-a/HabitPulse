@@ -11,6 +11,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
+configure_file(style.qss ${CMAKE_CURRENT_BINARY_DIR}/style.qss COPYONLY)
 
 set(PROJECT_SOURCES
         main.cpp
@@ -23,6 +24,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(HabitPulse
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
+        style.qss
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET HabitPulse APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
