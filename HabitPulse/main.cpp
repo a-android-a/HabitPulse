@@ -1,31 +1,31 @@
 #include <QtWidgets>
-#include<QVBoxLayout>
-#include<QPushButton>
-#include<QPalette>
+#include <QVBoxLayout>
+#include <QPushButton>
+#include <QPalette>
 #include <QFile>
-#include"LoadStyle.h"
+#include <QMessageBox>
+#include <QLineEdit>
+#include <QVBoxLayout>
+#include "LoadStyle.h"
 int main (int argc, char** argv){
     QApplication app(argc, argv);
 
-    QWidget wgt;
-
-    wgt.setBackgroundRole(QPalette::ColorRole::Base);
+    QWidget window;
+    window.setBackgroundRole(QPalette::ColorRole::Base);
     LoadStyle("style.qss");
-    QPushButton* pcmdA = new QPushButton ("Button1");
-    QPushButton* pcmdB = new QPushButton ("Button2");
-    QPushButton* pcmdC = new QPushButton ("Button3");
-    //Layout setup
-    QVBoxLayout* pvbxLayout = new QVBoxLayout;
-    pvbxLayout->addWidget (pcmdA);
-    pvbxLayout->addWidget (pcmdB);
-    pvbxLayout->addWidget (pcmdC);
-    wgt.setLayout (pvbxLayout);
-    QObject::connect(pcmdA, &QPushButton::clicked, &app, &QApplication::beep);
-    QObject::connect(pcmdB, &QPushButton::clicked, &app, &QApplication::beep);
-    QObject::connect(pcmdC, &QPushButton::clicked, &app, &QApplication::beep);
 
+    QVBoxLayout *layout = new QVBoxLayout(&window);
+    QPushButton *buttonAdd = new QPushButton();
+    QVBoxLayout *VBox = new QVBoxLayout();
+    QLineEdit *inputField = new QLineEdit();
 
-    wgt.show();
+    inputField->setPlaceholderText("habit");
+    buttonAdd->setText("Add");
+
+    layout->addWidget(inputField);
+    layout->addWidget(buttonAdd);
+    window.setLayout(layout);
+    window.show();
     return app. exec();
 }
 
