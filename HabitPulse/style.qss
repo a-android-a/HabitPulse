@@ -26,3 +26,7 @@ QLineEdit{
     background-color: #2b2b2b;
     color: white;
 }
+QLabel{
+background-color: #2b2b2b;
+color: white;
+}
