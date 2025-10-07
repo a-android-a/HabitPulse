@@ -12,6 +12,7 @@ bool LoadStyle(const QString &pathStyle){
     }else  {
         return false;
     }
+     return false;
 }
 
 #endif // LOADSTYLE_H
