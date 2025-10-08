@@ -1,6 +1,4 @@
 #include "MainWidget.h"
-
-
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QPushButton>
@@ -32,6 +30,8 @@ MainWidget::MainWidget(QWidget *pwgt) : QWidget(pwgt){
     m_mainLayout->addLayout(HBox);
 
     HBox->addWidget(buttonDel);
+    this->setLayout(m_mainLayout);
+    this->setLayout(HBox);
     connect(buttonAdd, &QPushButton::clicked, this, &MainWidget::AddButtonClicked);
     connect(buttonDel, &QPushButton::clicked, this, &MainWidget::DeleteButtonClicked);
 
