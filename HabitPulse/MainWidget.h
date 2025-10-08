@@ -11,6 +11,7 @@ class QLabel;
 class MainWidget: public QWidget {
     Q_OBJECT
 private:
+    QVBoxLayout *m_mainLayout;
     QPushButton *buttonAdd;
     QPushButton *buttonDel;
     QHBoxLayout *HBox;
